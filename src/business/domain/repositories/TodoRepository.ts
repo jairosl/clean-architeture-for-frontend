@@ -1,4 +1,4 @@
-import { Todo } from "../entities/Todo";
+import { Todo } from "@/business/domain/entities/Todo";
 
 
 export interface TodoRepository {

@@ -1,18 +1,14 @@
-import { Todo } from "../../entities/Todo";
-import { TodoRepository } from "../../repositories/TodoRepository";
+import { Todo } from '@/business/domain/entities/Todo';
+import { TodoRepository } from "@/business/domain/repositories/TodoRepository";
 
 
-export interface GetAllTodosUseCase {
-  exec: () => Promise<Todo[]>
-}
-
-export class GetTodos implements GetAllTodosUseCase {
+export class GetAllTodos  {
   private todoRepo: TodoRepository
     constructor(_todoRepo: TodoRepository) {
         this.todoRepo = _todoRepo;
     }
   
-  async exec():Promise<Todo[]> {
+  async execute():Promise<Todo[]> {
     return await this.todoRepo.getTodos()
   }
   
